@@ -1,0 +1,10 @@
+<p>paste url:</p>
+<input type="text" id="url" style="width:50%"><br>
+<button>Convert</button><br>
+<script>
+    document.querySelector("button").addEventListener("click", () => {
+        document.body.append('loadstring(game:HttpGet("' + document.getElementById("url").value + '"))()')
+        navigator.clipboard.writeText('loadstring(game:HttpGet("' + document.getElementById("url").value + '"))()')
+        setTimeout(() => {alert("copied to clipboard")},100)
+    })
+</script>
